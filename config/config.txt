@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+    DocumentRoot "C:\Users\Steve\Documents\GitHub\library\htdocs"
+    ServerName library.local
+    ServerAlias library.local
+    ErrorLog "logs/library-error.log"
+    CustomLog "logs/library-access.log" common
+	<Directory "C:\Users\Steve\Documents\GitHub\library\htdocs"> 
+		Options All +MultiViews -ExecCGI -Indexes -Includes +FollowSymLinks
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+        RewriteEngine On
+        RewriteBase /
+        RewriteRule http-bind http://is-501-labspub.unl.edu:7070/http-bind/ [P]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ index.php/$1 [L] 
+	</Directory>
+</VirtualHost>
+
+edit host file

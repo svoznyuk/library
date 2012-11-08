@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "x${1}" = "x" ]; then
+	echo "usage: makedist [dist-X.X]"
+	exit 1
+fi
+mkdir $1
+
+cp -r htdocs LGPL makedist NEWS README tinymvc $1
+vi $1/README $1/NEWS $1/tinymvc/sysfiles/TinyMVC.php
+find $1 -name \.svn -exec rm -rf {} \;
+tar -zcvf ${1}.tar.gz $1
+zip -r ${1}.zip $1
+rm -rf $1
+echo "be sure to make a tag with, see http://svnbook.red-bean.com/en/1.4/svn-book.html#svn.branchmerge under Creating a Simple Tag"
+echo "example: svn copy https://tinymvc-php.googlecode.com/svn/trunk/ https://tinymvc-php.googlecode.com/svn/tags/TinyMVC_1_3_1"
