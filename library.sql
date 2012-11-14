@@ -40,7 +40,7 @@ CREATE TABLE PhysicalCopy(
 (2052,'Systems Architecture',5),
 (2053,'Systems Architecture',5);
 
-create table reader (
+create table Reader (
  userName varchar(50) primary key,
  userCity varchar(50),
  userEmail varchar(50),
