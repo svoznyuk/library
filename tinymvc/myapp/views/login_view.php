@@ -2,7 +2,7 @@
 	<head>
 		<title>Library Login</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-		<link rel="stylesheet" href="/css/site.css" type="text/css">
+		<link rel="stylesheet" href="/library/htdocs/css/" type="text/css">
 	</head>
 	<body>
 		<div class="wrapper">
