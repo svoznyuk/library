@@ -1,0 +1,23 @@
+.wrapper {
+	margin: 5px auto;
+	width: 960px;
+}
+
+#login {
+	text-align: right;
+	width: 400px;
+	margin: 0 auto;
+}
+
+#login label {
+	float: left;
+}
+
+#login input[type=submit] {
+	margin: auto;
+}
+
+#login #submit{
+	margin-top: 10px;
+	text-align: center;
+}
