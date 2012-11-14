@@ -13,7 +13,7 @@
 			<h2>Wecome to the Library</h2>
 			<h4>Please sign in</h4>
 			<div id="login">
-				<form method="post" action="/index.php/default/login" id="login-form">
+				<form method="post" action="index.php/default/login" id="login-form">
 					<div>
 						<label for="u-name">User Name:</label>
 						<input type="text" name="u_name" id="u-name" value="" />
