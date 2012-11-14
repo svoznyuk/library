@@ -26,7 +26,7 @@ class Default_Controller extends TinyMVC_Controller
 		if($pass === "pass" && $uname === "user") {
 			$this->main();
 		} else {
-			$this->index(array("user"=> $uname, "pass" => $pass));
+			header('Location: /');
 		}
 	}
 	
