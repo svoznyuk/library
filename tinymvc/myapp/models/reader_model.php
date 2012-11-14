@@ -1,6 +1,6 @@
 <?php
 
-class Reader_Model extends TinyMVC_Model {
+class Reader_Model extends TinyMVC_Model {	
 	function get_readers() {
 		$select = "SELECT `userName` " .
 			"FROM `reader` " . 
