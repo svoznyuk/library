@@ -31,7 +31,10 @@ class Default_Controller extends TinyMVC_Controller
 	}
 	
 	function main() {
-		$this->view->display('index_view');
+		$this->load->model('reader_model', 'reader');
+		$res = $this->reader->get_reader_fines();
+		var_dump($res);
+	//	$this->view->display('index_view');
 	}
 }
 
