@@ -1,5 +1,5 @@
 use svoznyuk;
-DROP TABLE IF EXIST Book, PhysicalCopy,Loan, Reader;
+DROP TABLE IF EXISTS Book, PhysicalCopy,Loan, Reader;
 
 Create Table Book (
  ISBN int primary key,
