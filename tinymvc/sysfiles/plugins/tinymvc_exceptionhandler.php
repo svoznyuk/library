@@ -72,14 +72,12 @@ class TinyMVC_ExceptionHandler extends ErrorException {
 				  $code_name = $e->getCode();
 			  break;
 	  }
-	  ?>
-    <span style="text-align: left; background-color: #fcc; border: 1px solid #600; color: #600; display: block; margin: 1em 0; padding: .33em 6px">
-      <b>Error:</b> <?=$code_name?><br />
-      <b>Message:</b> <?=$e->getMessage()?><br />
-      <b>File:</b> <?=$e->getFile()?><br />
-      <b>Line:</b> <?=$e->getLine()?>
-    </span>
-	  <?php
+    echo '<span style="text-align: left; background-color: #fcc; border: 1px solid #600; color: #600; display: block; margin: 1em 0; padding: .33em 6px">';	
+      echo "<b>Error:</b>$code_name<br />";
+      echo "<b>Message:</b> ". $e->getMessage() . "<br /> ";
+      echo "<b>File:</b>".$e->getFile()." <br />";
+      echo "<b>Line:</b>" .$e->getLine() .">";
+    echo '</span>';
   }
   
 	/**
