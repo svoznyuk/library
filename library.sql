@@ -58,7 +58,7 @@ create table Loan (
  dateOut date,
  dateIn date null,
  dueDate date,
- foreign key(userName) REFERENCES reader(userName) ON DELETE RESTRICT,
+ foreign key(userName) REFERENCES Reader(userName) ON DELETE RESTRICT,
  PRIMARY KEY(userName, catalogNo, dateOut)
 );
 INSERT INTO Loan Values
