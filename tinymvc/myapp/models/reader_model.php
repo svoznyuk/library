@@ -1,6 +1,6 @@
 <?php
 
-class Reader_Model extends TinyMVC_Model {	
+class Reader_Model extends TinyMVC_Model {
 	function get_readers() {
 		$select = "SELECT `userName` " .
 			"FROM `reader` " . 
@@ -28,10 +28,10 @@ class Reader_Model extends TinyMVC_Model {
 		$res = $this->db->query_all($select);
 		if($res) {
 			$select = "SELECT DATEDIFF('$date', `loan`.`dueDate`) AS `daysOver`, `physicalCopy`.`overdueChargePerDay` AS `charge` " .
-				"FROM `loan` " .
-				"JOIN `physicalCopy` ON `loan`.`catalogNo` = `physicalCopy`.`catalogNo` " .
-				"WHERE `loan`.`userName` = ? " .
-				"AND `loan`.`dueDate` < ? " ;
+				"FROM `Loan` " .
+				"JOIN `PhysicalCopy` ON `Loan`.`catalogNo` = `PhysicalCopy`.`catalogNo` " .
+				"WHERE `Loan`.`userName` = ? " .
+				"AND `Loan`.`dueDate` < ? " ;
 				
 			$userFine = 0;
 			$fine = 0;
@@ -50,6 +50,15 @@ class Reader_Model extends TinyMVC_Model {
 		}
 		
 		return $res;
+	}
+	
+	function add_reader($reader = array()) {
+		return $this->db->insert('`Reader`', $reader);
+	}
+	
+	function update_reader($reader = array()) {
+		$this->db->where('`userName`', $reader['userName']);
+		return $this->db->update($reader);
 	}
 }
 

@@ -49,6 +49,15 @@ class PhysicalCopy_Model extends TinyMVC_Model {
 		$res = $this->db->query_all($select);
 		return $res ? $res : false;
 	}
+	
+	function add_copy($book_copy = array()) {
+		return $this->db->insert('PhysicalCopy', $book_copy);
+	}
+	
+	function modify_charge($cat_num, $new_charge) {
+		$this->db->where('catalogNo', $cat_num);
+		return $this->db->update('`PhysicalCopy`', array('overdueChargePerDay' => $new_charge));
+	}
 }
 
 ?>
