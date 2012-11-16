@@ -19,8 +19,8 @@ $config['root_controller'] = null;
 $config['root_action'] = null;
 
 /* name of default controller/method when none is given in the URL */
-$config['default_controller'] = 'default';
-$config['default_action'] = 'index';
+$config['default_controller'] = 'patron';
+$config['default_action'] = 'patron_report';
 
 /* name of PHP function that handles system errors */
 $config['error_handler_class'] = 'TinyMVC_ErrorHandler';

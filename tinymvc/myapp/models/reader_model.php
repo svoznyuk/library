@@ -15,7 +15,7 @@ class Reader_Model extends TinyMVC_Model {
 			"FROM `reader` " .
 			"WHERE `userName` = ? ";
 			
-		$res = $this->db->query_all($select, array($reader));
+		$res = $this->db->query_one($select, array($reader));
 		
 		return $res ? $res : false;
 	}
@@ -36,7 +36,7 @@ class Reader_Model extends TinyMVC_Model {
 			$userFine = 0;
 			$fine = 0;
 			for($i = 0; $i < count($res); $i++) {
-				
+				$userFine = 0;
 				$fines = $this->db->query_all($select, array($res[$i]['userName'], $date));
 				for($j = 0; $j < count($fines); $j++) {
 					$fine = $fines[$j]['daysOver'] * $fines[$j]['charge'];
@@ -53,12 +53,12 @@ class Reader_Model extends TinyMVC_Model {
 	}
 	
 	function add_reader($reader = array()) {
-		return $this->db->insert('`Reader`', $reader);
+		return $this->db->insert('Reader', $reader);
 	}
 	
 	function update_reader($reader = array()) {
 		$this->db->where('`userName`', $reader['userName']);
-		return $this->db->update($reader);
+		return $this->db->update('Reader', $reader);
 	}
 }
 

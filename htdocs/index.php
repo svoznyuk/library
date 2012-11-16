@@ -12,7 +12,7 @@
 error_reporting(E_ALL);
 
 /* if the /tinymvc/ dir is not up one directory, uncomment and set here */
-define('TMVC_BASEDIR','../tinymvc/');
+//define('TMVC_BASEDIR','../tinymvc/');
 
 /* if the /myapp/ dir is not inside the /tinymvc/ dir, uncomment and set here */
 //define('TMVC_MYAPPDIR','../tinymvc/myapp/');
